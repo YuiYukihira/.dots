@@ -1,0 +1,39 @@
+#!/usr/bin/sh
+
+wal -R
+. "${HOME}/.cache/wal/colors.sh"
+
+sxhkd &
+compton &
+synclient TapButton1=1 TapButton2=3 TapButton3=2
+nm-applet &
+polybar yuibar &
+pulseaudio &
+
+
+bspc config normal_border_color "$color1"
+bspc config active_border_color "$color2"
+bspc config focused_border_color "$color15"
+
+bspc config presel_feedback_color "$color1"
+
+bspc monitor -d code chrome III IV V VI VII IIX IX discord
+
+bspc config border_width    	5
+bspc config window_gap      	25
+bspc config split_ratio         0.5
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+
+bspc config top_padding 	20
+bspc config bottom_padding 	20
+bspc config left_padding	20
+bspc config right_padding	20
+
+bspc config focus_follows_pointer true
+
+bspc rule -a Chromium desktop=^2 follow=on
+bspc rule -a Emacs desktop=^1 folllow=on state=tiled
+bspc rule -a Discord desktop=^10 follow=on
+bspc rule -a Gimp desktop=^8 follow=on state=floating
+bspc rule -a Spotify desktop=^9 follow=off state=tiled

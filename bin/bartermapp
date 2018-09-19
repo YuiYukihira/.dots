@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+# Usage:
+#   bartermapp [arg1] [arg2]
+#      arg1: terminal program to run
+#      arg2: execution options
+#      arg3: number of times do apply additional 
+#            x offset defined by xinterval
+
+# Dependencies:
+#   tdrop
+
+
+xoffset=0
+xinterval=60
+yoffset=20
+width=600
+height=600
+terminal=konsole
+
+
+x=$(expr $xoffset + $xinterval \* $3 - $xinterval)
+
+tdrop -a -w $width -h $height -x $x -y $yoffset -n "$1 $3" -f "$2" $1
