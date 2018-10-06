@@ -1,0 +1,3 @@
+[submodule "Wallpapers"]
+	path = Wallpapers
+	url = git@github.com:YuiYukihira/Wallpapers.git
