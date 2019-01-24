@@ -54,11 +54,9 @@ ZSH_THEME="yuistheme"
 plugins=(
     git
     ssh-agent
-    wakatime
 )
 
-zstyle :omz:plugins:ssh-agent identities gitlab
-zstyle :omz:plugins:ssh-agent identities github
+zstyle :omz:plugins:ssh-agent identities github gitlab
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -99,9 +97,8 @@ export VISUAL="$EDITOR"
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
-alias config='/usr/bin/git --git-dir=/home/yui/.cfg/ --work-tree=/home/yui'
-
 echo $(sed -e 's/\\//g' .config/wpg/sequences)
 
 export PATH="${PATH}:/home/yui/.local/bin"
+export TEXMFHOME=$HOME/texmf 
 source ~/.cache/wal/colors-tty.sh

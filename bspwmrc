@@ -8,7 +8,7 @@ compton &
 synclient TapButton1=1 TapButton2=3 TapButton3=2
 nm-applet &
 polybar yuibar &
-pulseaudio &
+pulseaudio -start &
 
 
 bspc config normal_border_color "$color1"
