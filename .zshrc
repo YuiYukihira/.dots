@@ -56,7 +56,7 @@ plugins=(
     ssh-agent
 )
 
-zstyle :omz:plugins:ssh-agent identities github gitlab
+zstyle :omz:plugins:ssh-agent identities id_rsa 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -97,7 +97,8 @@ export VISUAL="$EDITOR"
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
-echo $(sed -e 's/\\//g' .config/wpg/sequences)
+(echo $(sed -e 's/\\//g' .cache/wal/sequences) &)
+source ~/.cache/wal/colors-tty.sh
 
 export PATH="${PATH}:/home/yui/.local/bin"
 export TEXMFHOME=$HOME/texmf 
