@@ -1,5 +1,5 @@
 # do pywal stuff and swap out the background so it's working with lightdm
 echo $1
-wal -g -i $1
+wal -i $1
 rm -rf /usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/*
 yes | cp -rf "$(< "${HOME}/.cache/wal/wal")" "/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/wal"
