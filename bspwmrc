@@ -4,10 +4,12 @@ wal -R
 . "${HOME}/.cache/wal/colors.sh"
 
 sxhkd &
-compton &
 nm-applet &
-polybar yuibar &
-pulseaudio -start &
+polybar desktopbarleft &
+polybar desktopbarmid &
+polybar desktopbarright &
+pulseaudio --kill
+pulseaudio --start &
 
 
 bspc config normal_border_color "$color1"
@@ -18,7 +20,7 @@ bspc config presel_feedback_color "$color1"
 
 bspc monitor DVI-D-0 -d I II III
 bspc monitor DP-2 -d code firefox VI VII
-bspc montior HDMI-0 -d IIX music discord
+bspc monitor HDMI-0 -d IIX music discord
 
 bspc config border_width    	5
 bspc config window_gap      	25
